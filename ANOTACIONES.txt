@@ -1,0 +1,216 @@
+﻿-----------------------------------------------------------------------------------------------------
+git
+
+
+1. INSTALAR https://git-scm.com/download/win
+
+
+git config (para iniciar)
+git status (ver estado de agregado de archivos)
+git init (generar repositorio)
+git log    (detalles bien explicados)
+git add    (agregar)
+git add . (muchos archivos)
+git commit -m"comentario" 
+git log --oneline (detalles mas acotados)
+.gitignore archivo en sublime adentro pongo flor.jpg para que la ignore
+gitpush para subir todo lo comiteado despues de estar logueado a github con gitpush origin
+
+GIT CONFIG 
+GIT INIT EN CARPETA DE RUTA
+WORKING (COLOR ROJO) <--((git add nombrearchivo))---> STAGE <--((COMMIT))---> COMMIT
+
+
+
+
+
+2. CONFIGURACION entrar a cmd ver la git version
+Microsoft Windows [Versión 10.0.17134.1006]
+(c) 2018 Microsoft Corporation. Todos los derechos reservados.
+
+C:\Users\Diseño Multimedial>git version
+git version 2.15.1.windows.2
+
+C:\Users\Diseño Multimedial>git config --global user.name "Nehuen Sanzo"
+C:\Users\Diseño Multimedial>git config --global user.email "nehuensanzo@gmail.com"
+C:\Users\Diseño Multimedial>git config --global color.ui auto
+
+C:\Users\Diseño Multimedial>cd desktop
+
+C:\Users\Diseño Multimedial\Desktop>cd clase19
+
+C:\Users\Diseño Multimedial\Desktop\clase19>git init           (creamos repositorio/tiene que aparecer archivo carpeta tildar en explorador de carpeta vista elementos ocultos)
+
+C:\Users\Diseño Multimedial\Desktop\clase19>git status
+
+C:\Users\Diseño Multimedial\Desktop\clase19>git add compras.txt
+
+C:\Users\Diseño Multimedial\Desktop\clase19>git commit -m "archivo nuevo compras"
+
+C:\Users\Diseño Multimedial\Desktop\clase19>git log
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+
+        compras.txt
+
+nothing added to commit but untracked files present (use "git add" to track)
+
+C:\Users\Diseño Multimedial\Desktop\clase19>git add compras.txt
+
+C:\Users\Diseño Multimedial\Desktop\clase19>git status
+On branch master
+
+No commits yet
+
+Changes to be committed:
+  (use "git rm --cached <file>..." to unstage)
+
+        new file:   compras.txt
+
+
+C:\Users\Diseño Multimedial\Desktop\clase19>git commit -m "archivo nuevo compras"
+[master (root-commit) d343c7f] archivo nuevo compras
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+ create mode 100644 compras.txt
+
+C:\Users\Diseño Multimedial\Desktop\clase19>git status
+On branch master
+nothing to commit, working tree clean
+
+C:\Users\Diseño Multimedial\Desktop\clase19>git log
+commit d343c7f5d4798f0a2d5362509743647fbe4064fd (HEAD -> master)
+Author: Nehuen Sanzo <nehuensanzo@gmail.com>
+Date:   Fri Sep 27 09:57:34 2019 -0300
+
+    archivo nuevo compras
+
+C:\Users\Diseño Multimedial\Desktop\clase19>git status
+On branch master
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git checkout -- <file>..." to discard changes in working directory)
+
+        modified:   compras.txt
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+
+        casa.jpg
+        img/
+
+no changes added to commit (use "git add" and/or "git commit -a")
+
+C:\Users\Diseño Multimedial\Desktop\clase19>git add compras.txt
+
+C:\Users\Diseño Multimedial\Desktop\clase19>git status
+On branch master
+Changes to be committed:
+  (use "git reset HEAD <file>..." to unstage)
+
+        modified:   compras.txt
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+
+        casa.jpg
+        img/
+
+
+C:\Users\Diseño Multimedial\Desktop\clase19>git commit -m"agregue frutas"
+[master e8627d5] agregue frutas
+ 1 file changed, 2 insertions(+)
+
+C:\Users\Diseño Multimedial\Desktop\clase19>git status
+On branch master
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+
+        casa.jpg
+        img/
+
+nothing added to commit but untracked files present (use "git add" to track)
+
+C:\Users\Diseño Multimedial\Desktop\clase19>git add img
+
+C:\Users\Diseño Multimedial\Desktop\clase19>git status
+On branch master
+Changes to be committed:
+  (use "git reset HEAD <file>..." to unstage)
+
+        new file:   img/flor.jpg
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+
+        casa.jpg
+
+
+C:\Users\Diseño Multimedial\Desktop\clase19>git commit -m "carpeta de imagenes"
+[master e129b8d] carpeta de imagenes
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+ create mode 100644 img/flor.jpg
+
+C:\Users\Diseño Multimedial\Desktop\clase19>git log
+commit e129b8d270cddf4f65aed2ad64f074f6b527677d (HEAD -> master)
+Author: Nehuen Sanzo <nehuensanzo@gmail.com>
+Date:   Fri Sep 27 10:11:35 2019 -0300
+
+    carpeta de imagenes
+
+commit e8627d5825b42833ad78973714610cef5271e299
+Author: Nehuen Sanzo <nehuensanzo@gmail.com>
+Date:   Fri Sep 27 10:09:27 2019 -0300
+
+    agregue frutas
+
+commit d343c7f5d4798f0a2d5362509743647fbe4064fd
+Author: Nehuen Sanzo <nehuensanzo@gmail.com>
+Date:   Fri Sep 27 09:57:34 2019 -0300
+
+    archivo nuevo compras
+
+C:\Users\Diseño Multimedial\Desktop\clase19>git status
+On branch master
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+
+        casa.jpg
+        dipper.jpg
+
+nothing added to commit but untracked files present (use "git add" to track)
+
+C:\Users\Diseño Multimedial\Desktop\clase19>git add .
+
+C:\Users\Diseño Multimedial\Desktop\clase19>git status
+On branch master
+Changes to be committed:
+  (use "git reset HEAD <file>..." to unstage)
+
+        new file:   casa.jpg
+        new file:   dipper.jpg
+
+
+C:\Users\Diseño Multimedial\Desktop\clase19>git commit -m"varias imagenes"
+[master 2f4e690] varias imagenes
+ 2 files changed, 0 insertions(+), 0 deletions(-)
+ create mode 100644 casa.jpg
+ create mode 100644 dipper.jpg
+
+C:\Users\Diseño Multimedial\Desktop\clase19>
+
+
+
+
+----------------------------------------------------------------------------------------------------------
+3)
+github
+
+hacer git init en cmd
+hacer add de todo y commit "primer commit"
+entrar a github crear repositorio
+pegar git remote de github
+pegar git push -u origin master (loguearse)
+
+
+
